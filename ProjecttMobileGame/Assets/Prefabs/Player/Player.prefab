@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6211648548535030962}
   - component: {fileID: -7547314136405641738}
   - component: {fileID: 8354115768754900955}
+  - component: {fileID: 4511640617015302873}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -69,6 +70,26 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.24, z: 0}
+--- !u!95 &4511640617015302873
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704347248668494669}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
+  m_Controller: {fileID: 9100000, guid: 52a0507957fc0c54e82a3d6f5464ee6b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7335048086132189454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,7 +157,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
 --- !u!4 &7335048086132585000 stripped
 Transform:
