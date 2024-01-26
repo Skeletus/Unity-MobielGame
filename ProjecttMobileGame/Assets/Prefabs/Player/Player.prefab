@@ -52,6 +52,7 @@ MonoBehaviour:
   characterController: {fileID: 8354115768754900955}
   moveSpeed: 5
   turnSpeed: 8
+  animTurnSpeed: 11
 --- !u!143 &8354115768754900955
 CharacterController:
   m_ObjectHideFlags: 0
