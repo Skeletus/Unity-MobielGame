@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a12b66bcc37a446b47d309b25dfc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedSlotTag: RiffleAttachedSlot
+  attachedSlotTag: RifleAttachedSlot
 --- !u!1001 &5434967298793359964
 PrefabInstance:
   m_ObjectHideFlags: 0
