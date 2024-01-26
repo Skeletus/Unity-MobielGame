@@ -46,27 +46,43 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 moveDirection = StickInputToWorldDirection(moveInput);
-        Vector3 aimDirection = moveDirection;
+        PerformMoveAndAim();
+        UpdateCamera();
+    }
 
-        if(aimInput.magnitude!= 0)
+    private void PerformMoveAndAim()
+    {
+        Vector3 moveDirection = StickInputToWorldDirection(moveInput);
+        characterController.Move(moveDirection * Time.deltaTime * moveSpeed);
+
+        UpdateAim(moveDirection);
+    }
+
+    private void UpdateAim(Vector3 curretMoveDirection)
+    {
+        Vector3 aimDirection = curretMoveDirection;
+        if (aimInput.magnitude != 0)
         {
             aimDirection = StickInputToWorldDirection(aimInput);
         }
+        RotateTowards(aimDirection);
+    }
 
-        if(aimDirection.magnitude!= 0)
+    private void UpdateCamera()
+    {
+        // if player it's not moving but not aiming, and cameraController exits
+        if (moveInput.magnitude != 0 && aimInput.magnitude == 0 && cameraController != null)
+        {
+            cameraController.AddYawInput(moveInput.x);
+        }
+    }
+
+    private void RotateTowards(Vector3 aimDirection)
+    {
+        if (aimDirection.magnitude != 0)
         {
             float turnLerpAlpha = turnSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(aimDirection, Vector3.up), 0.5f);
-        }
-
-        characterController.Move(moveDirection * Time.deltaTime * moveSpeed);
-        if (moveInput.magnitude != 0)
-        {
-            if (characterController != null)
-            {
-                cameraController.AddYawInput(moveInput.x);
-            }
         }
     }
 }
