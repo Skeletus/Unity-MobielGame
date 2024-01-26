@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     Camera mainCam;
     CameraController cameraController;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
         aimStick.onStickValueUpdated += AimInputUpdated;
         mainCam = Camera.main;
         cameraController = FindObjectOfType<CameraController>();
+        animator = GetComponent<Animator>();
     }
 
     void AimInputUpdated(Vector2 inputValue)
@@ -56,6 +58,12 @@ public class Player : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime * moveSpeed);
 
         UpdateAim(moveDirection);
+
+        float forward = Vector3.Dot(moveDirection, transform.forward);
+        float right = Vector3.Dot(moveDirection, transform.right);
+
+        animator.SetFloat("ForwardSpeed", forward);
+        animator.SetFloat("RightSpeed", forward);
     }
 
     private void UpdateAim(Vector3 curretMoveDirection)

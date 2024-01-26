@@ -50,8 +50,8 @@ MonoBehaviour:
   aimStick: {fileID: 0}
   moveStick: {fileID: 0}
   characterController: {fileID: 8354115768754900955}
-  moveSpeed: 20
-  turnSpeed: 30
+  moveSpeed: 5
+  turnSpeed: 8
 --- !u!143 &8354115768754900955
 CharacterController:
   m_ObjectHideFlags: 0

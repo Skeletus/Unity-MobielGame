@@ -20,7 +20,7 @@ public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
         Vector2 centerPosition = backGroundTransform.position;
 
         Vector2 localOffSet = Vector2.ClampMagnitude(touchPosition - centerPosition, backGroundTransform.sizeDelta.x/2);
-        Vector2 inputValue = localOffSet / backGroundTransform.sizeDelta.x/2; 
+        Vector2 inputValue = localOffSet / (backGroundTransform.sizeDelta.x/2); 
         thumbStickTransform.position = centerPosition + localOffSet;
         onStickValueUpdated?.Invoke(inputValue);
     }

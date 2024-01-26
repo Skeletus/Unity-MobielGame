@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTransform: {fileID: 0}
-  turnSpeed: 200
+  turnSpeed: 50
 --- !u!1 &6007874419350966425
 GameObject:
   m_ObjectHideFlags: 0
