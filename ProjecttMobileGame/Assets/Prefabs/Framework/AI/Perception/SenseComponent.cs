@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static SenseComponent;
 
 public abstract class SenseComponent : MonoBehaviour
 {
+    [SerializeField] float forgettingTime = 4f;
     static List<PerceptionStimulus> registeredStimulusList = new List<PerceptionStimulus>();
     List<PerceptionStimulus> perceptibleStimulusList = new List<PerceptionStimulus>();
+
+    Dictionary<PerceptionStimulus, Coroutine> forgettingRoutines = new Dictionary<PerceptionStimulus, Coroutine>();
+
+    public delegate void OnPerceptionUpdated(PerceptionStimulus stimulus, bool successFullySensed);
+
+    public event OnPerceptionUpdated onPerceptionUpdated;
 
     public static void RegisterStimulus(PerceptionStimulus stimulus)
     {
@@ -39,7 +47,16 @@ public abstract class SenseComponent : MonoBehaviour
                 if (!perceptibleStimulusList.Contains(stimulus))
                 {
                     perceptibleStimulusList.Add(stimulus);
-                    Debug.Log($"Sensed {stimulus.gameObject}");
+                    if (forgettingRoutines.TryGetValue(stimulus, out Coroutine routine))
+                    {
+                        StopCoroutine(routine);
+                        forgettingRoutines.Remove(stimulus);
+                    }
+                    else
+                    {
+                        onPerceptionUpdated?.Invoke(stimulus, true);
+                        Debug.Log($"Sensed {stimulus.gameObject}");
+                    }
                 }
             }
             else
@@ -47,10 +64,18 @@ public abstract class SenseComponent : MonoBehaviour
                 if (perceptibleStimulusList.Contains(stimulus))
                 {
                     perceptibleStimulusList.Remove(stimulus);
-                    Debug.Log($"Track off {stimulus.gameObject}");
+                    forgettingRoutines.Add(stimulus, StartCoroutine(ForgetStimulus(stimulus)));
                 }
             }
         }
+    }
+
+    IEnumerator ForgetStimulus(PerceptionStimulus stimulus)
+    {
+        yield return new WaitForSeconds(forgettingTime);
+        forgettingRoutines.Remove(stimulus);
+        onPerceptionUpdated?.Invoke(stimulus, false);
+        Debug.Log($"Track off {stimulus.gameObject}");
     }
 
     protected virtual void DrawDebug()
