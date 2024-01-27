@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] string attachedSlotTag;
+    [SerializeField] AnimatorOverrideController overrideController;
 
     public string GetAttachedSlotTag()
     {
@@ -26,6 +27,7 @@ public abstract class Weapon : MonoBehaviour
     public void Equip()
     {
         gameObject.SetActive(true);
+        owner.GetComponent<Animator>().runtimeAnimatorController = overrideController;
     }
 
     public void UnEquip()

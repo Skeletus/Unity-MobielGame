@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e86714e0642a06e4c96add296288dac4
+guid: fd375c6e6cbfb4e4694615f7c5ba84f8
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: LocalMotion_IDLE
+    second: LocalMotion_FiringRifle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LocalMotion_IDLE
+      name: LocalMotion_FiringRifle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 126
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
