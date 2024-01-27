@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,14 @@ public class HealthBar : MonoBehaviour
         attachedPoint = _attachedPoint;
     }
 
-    public void SetHealthSliderValue(float value)
+    public void SetHealthSliderValue(float health, float delta, float maxHealth)
     {
-        healthSlider.value = value;
+        healthSlider.value = health / maxHealth;
+    }
+
+    internal void OnOwnerDead()
+    {
+        Destroy(gameObject);
     }
 
     private void Update()
