@@ -28,13 +28,18 @@ public class Player : MonoBehaviour
     {
         moveStick.onStickValueUpdated += MoveInputUpdated;
         aimStick.onStickValueUpdated += AimInputUpdated;
-        aimStick.onStickTapped += SwitchWeapon;
+        aimStick.onStickTapped += StartSwitchWeapon;
         mainCam = Camera.main;
         cameraController = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
     }
 
-    void SwitchWeapon()
+    void StartSwitchWeapon()
+    {
+        animator.SetTrigger("SwitchWeapon");
+    }
+
+    public void SwitchWeapon()
     {
         inventoryComponent.NextWeapon();
     }
