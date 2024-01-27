@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5251782849713247466}
   - component: {fileID: 7630941768785339877}
+  - component: {fileID: 1608042761438633749}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -30,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5434967298793754836}
+  - {fileID: 5869596009550316013}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,7 +48,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedSlotTag: RifleAttachedSlot
+  attackRateMultiplier: 2
   overrideController: {fileID: 22100000, guid: 43726bdf918fde1478e840220d596a37, type: 2}
+  aimComponent: {fileID: 1608042761438633749}
+--- !u!114 &1608042761438633749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427437167977024917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ca30f43ef974c42b7a343f8aa62b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 5869596009550316013}
+  aimRange: 1000
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+--- !u!1 &7092193424750190867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5869596009550316013}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5869596009550316013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7092193424750190867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.081, z: 0.526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5251782849713247466}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5434967298793359964
 PrefabInstance:
   m_ObjectHideFlags: 0
