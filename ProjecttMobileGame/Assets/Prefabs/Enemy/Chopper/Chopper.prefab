@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: -6182940255931342786}
   - component: {fileID: -4394258270009189991}
   - component: {fileID: 3436326329350946225}
+  - component: {fileID: 1226217505102069113}
   m_Layer: 0
   m_Name: Chopper
   m_TagString: Untagged
@@ -164,6 +165,19 @@ MonoBehaviour:
     type: 3}
   healthBarAttachedPoint: {fileID: 5776966613732921241}
   healthComponent: {fileID: 3558819429447765864}
+--- !u!114 &1226217505102069113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595042953723319146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a864722b0ba28c4408013121ffb6b433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  awareDistance: 2
 --- !u!1001 &5619703562474723023
 PrefabInstance:
   m_ObjectHideFlags: 0
