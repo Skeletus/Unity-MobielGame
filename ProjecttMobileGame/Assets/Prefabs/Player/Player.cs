@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     [SerializeField] float turnSpeed = 30f;
     [SerializeField] float animTurnSpeed = 11f;
 
+    [Header("Invetory")]
+    [SerializeField] InventoryComponent inventoryComponent;
+
     Vector2 moveInput;
     Vector2 aimInput;
 
@@ -25,9 +28,15 @@ public class Player : MonoBehaviour
     {
         moveStick.onStickValueUpdated += MoveInputUpdated;
         aimStick.onStickValueUpdated += AimInputUpdated;
+        aimStick.onStickTapped += SwitchWeapon;
         mainCam = Camera.main;
         cameraController = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
+    }
+
+    void SwitchWeapon()
+    {
+        inventoryComponent.NextWeapon();
     }
 
     void AimInputUpdated(Vector2 inputValue)

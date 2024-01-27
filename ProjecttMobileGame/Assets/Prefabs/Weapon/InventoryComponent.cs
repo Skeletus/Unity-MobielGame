@@ -40,7 +40,7 @@ public class InventoryComponent : MonoBehaviour
         NextWeapon();
     }
 
-    private void NextWeapon()
+    public void NextWeapon()
     {
         int nextWeaponIndex = currentWeaponIndex + 1;
         if(nextWeaponIndex >= weapons.Count )

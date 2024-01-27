@@ -10,8 +10,12 @@ public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
     [SerializeField] RectTransform centerTransform;
 
     public delegate void OnStickInputValueUpdated(Vector2 inputValue);
+    public delegate void OnStickTapped();
 
     public event OnStickInputValueUpdated onStickValueUpdated;
+    public event OnStickTapped onStickTapped;
+
+    public bool bWasDragging;
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -23,12 +27,14 @@ public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
         Vector2 inputValue = localOffSet / (backGroundTransform.sizeDelta.x/2); 
         thumbStickTransform.position = centerPosition + localOffSet;
         onStickValueUpdated?.Invoke(inputValue);
+        bWasDragging = true;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         backGroundTransform.position = eventData.position;
         thumbStickTransform.position = eventData.position;
+        bWasDragging = false;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -36,6 +42,10 @@ public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
         backGroundTransform.position = centerTransform.position;
         thumbStickTransform.position = backGroundTransform.position;
         onStickValueUpdated?.Invoke(Vector2.zero);
+        if(!bWasDragging)
+        {
+            onStickTapped?.Invoke();
+        }
     }
 
     // Start is called before the first frame update
