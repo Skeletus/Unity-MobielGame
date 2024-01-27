@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4723845363379630276}
   - component: {fileID: 9052769958399410405}
   - component: {fileID: 3558819429447765864}
+  - component: {fileID: -6182940255931342786}
+  - component: {fileID: -4394258270009189991}
   m_Layer: 0
   m_Name: Chopper
   m_TagString: Untagged
@@ -79,6 +81,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+--- !u!114 &-6182940255931342786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595042953723319146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee3126476a56074a9a4f0c54af02db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthComponent: {fileID: 3558819429447765864}
+  animator: {fileID: -4394258270009189991}
+--- !u!95 &-4394258270009189991
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595042953723319146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2a19a51b47940934c81e82b925b0110c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5619703562474723023
 PrefabInstance:
   m_ObjectHideFlags: 0
