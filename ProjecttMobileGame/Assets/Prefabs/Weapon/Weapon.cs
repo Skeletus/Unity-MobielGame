@@ -38,4 +38,13 @@ public abstract class Weapon : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void DamageGameObject(GameObject gameObjectToDamage, float amount)
+    {
+        HealthComponent healthComponent = gameObjectToDamage.GetComponent<HealthComponent>();
+        if(healthComponent != null)
+        {
+            healthComponent.ChangeHealth(-amount);
+        }
+    }
 }
