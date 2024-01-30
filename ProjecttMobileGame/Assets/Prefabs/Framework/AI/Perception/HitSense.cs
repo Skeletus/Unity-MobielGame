@@ -36,7 +36,6 @@ public class HitSense : SenseComponent
                 hitRecord.Add(stimulus, newForgettingCoroutine);
             }
         }
-        throw new NotImplementedException();
     }
 
     IEnumerator ForgetStimulus(PerceptionStimulus stimulus)
