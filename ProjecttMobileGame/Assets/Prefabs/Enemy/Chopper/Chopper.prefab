@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 3436326329350946225}
   - component: {fileID: 1226217505102069113}
   - component: {fileID: 6090588665331201412}
+  - component: {fileID: 2023098654293467692}
   m_Layer: 0
   m_Name: Chopper
   m_TagString: Untagged
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 3558819429447765864}
   animator: {fileID: -4394258270009189991}
+  perceptionComponent: {fileID: 2023098654293467692}
 --- !u!95 &-4394258270009189991
 Animator:
   serializedVersion: 4
@@ -178,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a864722b0ba28c4408013121ffb6b433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forgettingTime: 4
   awareDistance: 2
 --- !u!114 &6090588665331201412
 MonoBehaviour:
@@ -191,9 +194,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6852e09cab7a54ba47c6366822e07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forgettingTime: 4
   sightDistance: 5
   sightHalfAngle: 45
   sightHeight: 1
+--- !u!114 &2023098654293467692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595042953723319146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b0d4564bbd741458836585e3bb35eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensesArray:
+  - {fileID: 6090588665331201412}
+  - {fileID: 1226217505102069113}
 --- !u!1001 &5619703562474723023
 PrefabInstance:
   m_ObjectHideFlags: 0

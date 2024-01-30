@@ -7,6 +7,10 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] HealthComponent healthComponent;
     [SerializeField] Animator animator;
+    [SerializeField] PerceptionComponent perceptionComponent;
+
+    GameObject target;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +18,19 @@ public class Enemy : MonoBehaviour
         {
             healthComponent.onHealthEmpty += StartDeath;
             healthComponent.onTakeDamage += TakeDamage;
+        }
+        perceptionComponent.onPerceptionTargetChanged += TargetChanged;
+    }
+
+    private void TargetChanged(GameObject target, bool sensed)
+    {
+        if(sensed)
+        {
+            this.target = target;
+        }
+        else
+        {
+            this.target = null;
         }
     }
 
@@ -44,5 +61,16 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (target != null)
+        {
+            Vector3 drawTargetPosition = target.transform.position + Vector3.up;
+            Gizmos.DrawWireSphere(drawTargetPosition, 0.7f);
+
+            Gizmos.DrawLine(transform.position + Vector3.up, drawTargetPosition);
+        }
     }
 }
