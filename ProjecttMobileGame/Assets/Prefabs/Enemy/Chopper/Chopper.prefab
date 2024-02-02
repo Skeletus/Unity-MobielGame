@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 6090588665331201412}
   - component: {fileID: 2023098654293467692}
   - component: {fileID: 2894444731934889468}
+  - component: {fileID: 7149474119733180923}
   m_Layer: 0
   m_Name: Chopper
   m_TagString: Untagged
@@ -230,6 +231,18 @@ MonoBehaviour:
   forgettingTime: 3
   healthComponent: {fileID: 3558819429447765864}
   hitMemory: 4
+--- !u!114 &7149474119733180923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595042953723319146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aa979b4e45db7418c243d83ec0eefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5619703562474723023
 PrefabInstance:
   m_ObjectHideFlags: 0
