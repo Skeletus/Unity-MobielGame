@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            behaviorTree.Blackboard.SetOrAddData("LastSeenLoc", target.transform.position);
             behaviorTree.Blackboard.RemoveBlackboardData("Target");
         }
     }
