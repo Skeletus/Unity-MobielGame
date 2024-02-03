@@ -19,8 +19,17 @@ public class ChopperBehavior : BehaviorTree
 
         rootNode = Root;
         */
-        BT_Task_MoveToTarget moveToTarget = new BT_Task_MoveToTarget(this, "Target", 2f);
-        rootNode = moveToTarget;
+        Sequencer patrollingSeq = new Sequencer();
+
+        BT_Task_GetNextPatrolPoint getNextPatrolPoint = new BT_Task_GetNextPatrolPoint(this, "PatrolPoint");
+        BT_Task_MoveToLoc moveToPatrolPoint = new BT_Task_MoveToLoc(this, "PatrolPoint", 3);
+        BT_Task_Wait waitAtPatrolPoint = new BT_Task_Wait(2f);
+
+        patrollingSeq.AddChild(getNextPatrolPoint);
+        patrollingSeq.AddChild(moveToPatrolPoint);
+        patrollingSeq.AddChild(waitAtPatrolPoint);
+
+        rootNode = patrollingSeq;
     }
 
 }
