@@ -6,19 +6,20 @@ public class ChopperBehavior : BehaviorTree
 {
     protected override void ConstructTree(out BT_Node rootNode)
     {
-        /*
-        BT_Task_Wait waitTask = new BT_Task_Wait(2f);
-        BT_Task_Log log = new BT_Task_Log("logging");
-        BT_Task_AlwaysFail fail = new BT_Task_AlwaysFail();
+        Selector RootSelector = new Selector();
+        Sequencer attackTargetSeq = new Sequencer();
+        BT_Task_MoveToTarget moveToTarget = new BT_Task_MoveToTarget(this, "Target", 2);
+        attackTargetSeq.AddChild(moveToTarget);
 
-        Sequencer Root = new Sequencer();
+        BlackboardDecorator attackTargetDecorator = new BlackboardDecorator(this,
+                                                                            attackTargetSeq, "Target",
+                                                                            BlackboardDecorator.RunCondition.KeyExists,
+                                                                            BlackboardDecorator.NotifyRule.RunConditionChange,
+                                                                            BlackboardDecorator.NotifyAbort.both
+                                                                            );
 
-        Root.AddChild(log);
-        Root.AddChild(waitTask);
-        Root.AddChild(fail);
+        RootSelector.AddChild(attackTargetDecorator);
 
-        rootNode = Root;
-        */
         Sequencer patrollingSeq = new Sequencer();
 
         BT_Task_GetNextPatrolPoint getNextPatrolPoint = new BT_Task_GetNextPatrolPoint(this, "PatrolPoint");
@@ -29,7 +30,9 @@ public class ChopperBehavior : BehaviorTree
         patrollingSeq.AddChild(moveToPatrolPoint);
         patrollingSeq.AddChild(waitAtPatrolPoint);
 
-        rootNode = patrollingSeq;
+        RootSelector.AddChild(patrollingSeq);
+
+        rootNode = RootSelector;
     }
 
 }

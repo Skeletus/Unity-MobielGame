@@ -61,4 +61,16 @@ public abstract class BT_Node
     }
 
     bool started = false;
+    int priority;
+
+    public int GetPriority()
+    {
+        return priority;
+    }
+
+    public virtual void SortPriority(ref int priorityConter)
+    {
+        priority = priorityConter++;
+        Debug.Log($"{this} has priorty {priority}");
+    }
 }
