@@ -129,7 +129,7 @@ public class BlackboardDecorator : Decorator
 
     private void AbortLower()
     {
-        throw new NotImplementedException();
+        tree.AbortLowerThan(GetPriority());
     }
 
     private void AbortSelf()
