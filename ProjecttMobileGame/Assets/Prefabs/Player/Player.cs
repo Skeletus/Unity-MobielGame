@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
 
         animator.SetFloat("ForwardSpeed", forward);
         animator.SetFloat("RightSpeed", forward);
+        characterController.Move(Vector3.down * Time.deltaTime * 10f);
     }
 
     private void UpdateAim(Vector3 curretMoveDirection)

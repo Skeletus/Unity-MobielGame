@@ -6,6 +6,7 @@ public class ChopperBehavior : BehaviorTree
 {
     protected override void ConstructTree(out BT_Node rootNode)
     {
+        /*
         BT_Task_Wait waitTask = new BT_Task_Wait(2f);
         BT_Task_Log log = new BT_Task_Log("logging");
         BT_Task_AlwaysFail fail = new BT_Task_AlwaysFail();
@@ -17,6 +18,9 @@ public class ChopperBehavior : BehaviorTree
         Root.AddChild(fail);
 
         rootNode = Root;
+        */
+        BT_Task_MoveToTarget moveToTarget = new BT_Task_MoveToTarget(this, "Target", 2f);
+        rootNode = moveToTarget;
     }
 
 }
