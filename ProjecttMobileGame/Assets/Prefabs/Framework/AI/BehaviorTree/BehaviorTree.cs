@@ -6,6 +6,14 @@ using UnityEngine;
 public abstract class BehaviorTree : MonoBehaviour
 {
     BT_Node Root;
+
+    BlackBoard blackboard = new BlackBoard();
+
+    public BlackBoard Blackboard
+    {
+        get { return blackboard; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

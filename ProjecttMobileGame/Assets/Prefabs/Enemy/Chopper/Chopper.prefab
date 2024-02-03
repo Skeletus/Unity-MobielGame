@@ -134,6 +134,7 @@ MonoBehaviour:
   healthComponent: {fileID: 3558819429447765864}
   animator: {fileID: -4394258270009189991}
   perceptionComponent: {fileID: 2023098654293467692}
+  behaviorTree: {fileID: 7149474119733180923}
 --- !u!95 &-4394258270009189991
 Animator:
   serializedVersion: 4
