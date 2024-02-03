@@ -27,6 +27,7 @@ public class BlackboardDecorator : Decorator
 
     BehaviorTree tree;
     string key;
+    object value;
 
     RunCondition runCondition;
     NotifyRule notifyRule;
@@ -52,7 +53,9 @@ public class BlackboardDecorator : Decorator
         if (blackboard == null)
             return NodeResult.Failure;
 
+        blackboard.onBlackboardValueChange -= CheckNotify;
         blackboard.onBlackboardValueChange += CheckNotify;
+
         if (CheckRunCondition())
         {
             return NodeResult.InProgress;
@@ -65,16 +68,83 @@ public class BlackboardDecorator : Decorator
 
     private bool CheckRunCondition()
     {
-        throw new NotImplementedException();
+        bool exists = tree.Blackboard.GetBlackboardData(key, out value);
+        switch (runCondition)
+        {
+            case RunCondition.KeyExists:
+                return exists;
+            case RunCondition.keyNotExists:
+                return !exists;
+        }
+
+        return false;
     }
 
     private void CheckNotify(string key, object val)
     {
+        if (this.key != key) return;
 
+        if (notifyRule == NotifyRule.RunConditionChange)
+        {
+            bool prevExists = value != null;
+            bool currentExists = val != null;
+
+            if (prevExists != currentExists)
+            {
+                Notify();
+            }
+        }
+        else if (notifyRule == NotifyRule.KeyValueChange)
+        {
+            if (value != val)
+            {
+                Notify();
+            }
+        }
+    }
+
+    private void Notify()
+    {
+        switch (notifyAbort)
+        {
+            case NotifyAbort.none:
+                break;
+            case NotifyAbort.self:
+                AbortSelf();
+                break;
+            case NotifyAbort.lower:
+                AbortLower();
+                break;
+            case NotifyAbort.both:
+                AbortBoth();
+                break;
+        }
+    }
+
+    private void AbortBoth()
+    {
+        Abort();
+        AbortLower();
+    }
+
+    private void AbortLower()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void AbortSelf()
+    {
+        Abort();
     }
 
     protected override NodeResult Update()
     {
         return GetChild().UpdateNode();
+    }
+
+    protected override void End()
+    {
+        GetChild().Abort();
+        base.End();
     }
 }
