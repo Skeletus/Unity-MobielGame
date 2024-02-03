@@ -9,6 +9,8 @@ public abstract class BehaviorTree : MonoBehaviour
 
     BlackBoard blackboard = new BlackBoard();
 
+    BehaviorTreeInterface behaviorTreeInterface;
+
     public BlackBoard Blackboard
     {
         get { return blackboard; }
@@ -17,6 +19,7 @@ public abstract class BehaviorTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        behaviorTreeInterface = GetComponent<BehaviorTreeInterface>();
         ConstructTree(out Root);
         SortTree();
     }
