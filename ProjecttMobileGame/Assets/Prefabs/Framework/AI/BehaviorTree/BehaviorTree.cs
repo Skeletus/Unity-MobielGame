@@ -24,6 +24,11 @@ public abstract class BehaviorTree : MonoBehaviour
         SortTree();
     }
 
+    internal BehaviorTreeInterface GetBehaviorTreeInterface()
+    {
+        return behaviorTreeInterface;
+    }
+
     private void SortTree()
     {
         int priortyCounter = 0;

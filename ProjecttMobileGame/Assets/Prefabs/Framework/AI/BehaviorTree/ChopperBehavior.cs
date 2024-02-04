@@ -12,10 +12,12 @@ public class ChopperBehavior : BehaviorTree
         Sequencer attackTargetSeq = new Sequencer();
         BT_Task_MoveToTarget moveToTarget = new BT_Task_MoveToTarget(this, "Target", 2);
 
-        //rotate toward the target
+
+        BT_Task_RotateTowardsTarget rotateTowardsTarget = new BT_Task_RotateTowardsTarget(this, "Target", 10f);
         //attack
 
         attackTargetSeq.AddChild(moveToTarget);
+        attackTargetSeq.AddChild(rotateTowardsTarget);
 
         BlackboardDecorator attackTargetDecorator = new BlackboardDecorator(this,
                                                                             attackTargetSeq,
