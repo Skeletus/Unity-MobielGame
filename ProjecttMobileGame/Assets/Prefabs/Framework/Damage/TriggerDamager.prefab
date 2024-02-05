@@ -48,10 +48,9 @@ MonoBehaviour:
   DamageFriendly: 0
   DamageEnemy: 1
   DamageNeutral: 0
-  teamIntefaceSrc: {fileID: 0}
   damage: 5
   trigger: {fileID: -3834157965357765693}
-  startedEnabled: 1
+  startedEnabled: 0
 --- !u!65 &-3834157965357765693
 BoxCollider:
   m_ObjectHideFlags: 0
