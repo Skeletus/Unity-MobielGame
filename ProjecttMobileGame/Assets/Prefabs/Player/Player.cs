@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, TeamInterface
 {
     [SerializeField] JoyStick aimStick;
     [SerializeField] JoyStick moveStick;
@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 20f;
     [SerializeField] float animTurnSpeed = 11f;
     [SerializeField] MovementComponent movementComponent;
+    [SerializeField] int TeamID = 1;
 
     [Header("Invetory")]
     [SerializeField] InventoryComponent inventoryComponent;
@@ -22,6 +23,11 @@ public class Player : MonoBehaviour
     Animator animator;
 
     float animatorTurnSpeed;
+
+    public int GetTeamID()
+    {
+        return TeamID;
+    }
 
     // Start is called before the first frame update
     void Start()

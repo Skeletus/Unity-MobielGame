@@ -3,15 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour, BehaviorTreeInterface
+public abstract class Enemy : MonoBehaviour, BehaviorTreeInterface, TeamInterface
 {
     [SerializeField] HealthComponent healthComponent;
     [SerializeField] Animator animator;
     [SerializeField] PerceptionComponent perceptionComponent;
     [SerializeField] BehaviorTree behaviorTree;
     [SerializeField] MovementComponent movementComponent;
+    [SerializeField] int TeamID = 2;
 
     Vector3 previousPosition;
+
+    public int GetTeamID()
+    {
+        return TeamID;
+    }
 
     public Animator Animator
     {
