@@ -124,6 +124,7 @@ MonoBehaviour:
   inventoryComponent: {fileID: 2863672362084190235}
   healthComponent: {fileID: 4928833271398038652}
   healthBar: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!143 &8354115768754900955
 CharacterController:
   m_ObjectHideFlags: 0
