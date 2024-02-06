@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,5 +39,10 @@ public class HealthComponent : MonoBehaviour
         }
 
         Debug.Log($"{gameObject.name}, taking damage {amount}, health is now: {health}");
+    }
+
+    public void BroadcastHealthValueImmeidately()
+    {
+        onHealthChange?.Invoke(health, 0, maxHealth);
     }
 }
