@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 5791386320206362496}
   - component: {fileID: 8416289471791984062}
   - component: {fileID: 4928833271398038652}
+  - component: {fileID: 6310883513870394796}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -219,6 +220,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+--- !u!114 &6310883513870394796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704347248668494669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ffed46f34bd794098905d4d4d8c076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 0}
+  DamageEmmisionColor: {r: 0, g: 0, b: 0, a: 0}
+  BlinkSpeed: 2
+  EmmisionColorPropertyName: _Addtion
+  healthComponent: {fileID: 0}
 --- !u!1001 &7335048086132189454
 PrefabInstance:
   m_ObjectHideFlags: 0
