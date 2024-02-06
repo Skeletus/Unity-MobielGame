@@ -4,6 +4,7 @@ Shader "Custom/Dissolve" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		[HDR]_Emission ("Emission", Color) = (0,0,0,0)
+		[HDR]_Addition("Addition", Color) = (0,0,0,0)
 		_MainTex ("Albedo", 2D) = "white" {}
 		_Normal ("Normal", 2D) = "bump" {}
 		_MetallicSmooth ("Metallic (RGB) Smooth (A)", 2D) = "white" {}
@@ -52,7 +53,7 @@ Shader "Custom/Dissolve" {
 
 
 		half _Glossiness, _Metallic, _Cutoff, _EdgeSize, _NoiseStrength, _DisplaceAmount;
-		half4 _Color, _EdgeColor1, _Emission;
+		half4 _Color, _EdgeColor1, _Emission, _Addition;
 
 
 		void vert (inout appdata_full v, out Input o) {
@@ -90,7 +91,7 @@ Shader "Custom/Dissolve" {
 
 			o.Albedo = c * _Color;
 			o.Occlusion = tex2D (_AO, IN.uv_MainTex);
-			o.Emission = EmissiveCol + _EdgeColor1 * Edge;
+			o.Emission = EmissiveCol + _EdgeColor1 * Edge + _Addition;
 			o.Normal = UnpackNormal (tex2D (_Normal, IN.uv_MainTex));
 			o.Metallic = MetallicSmooth.r * _Metallic;
 			o.Smoothness = MetallicSmooth.a * _Glossiness;

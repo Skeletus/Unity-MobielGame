@@ -57,6 +57,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
+--- !u!137 &1058935282535513271 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: 2732fe64dd2799f439fb845921df626b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1058935282532431639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5602327393199325668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +211,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chopper
       objectReference: {fileID: 0}
+    - target: {fileID: 5250056237925167703, guid: 529097dfbd0489646bf88eea352b44fa,
+        type: 3}
+      propertyPath: mesh
+      value: 
+      objectReference: {fileID: 1058935282535513271}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 529097dfbd0489646bf88eea352b44fa, type: 3}
 --- !u!95 &3709140876759159799 stripped
