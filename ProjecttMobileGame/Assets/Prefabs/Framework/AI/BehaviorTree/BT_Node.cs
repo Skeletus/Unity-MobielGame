@@ -74,6 +74,8 @@ public abstract class BT_Node
         Debug.Log($"{this} has priorty {priority}");
     }
 
+    public virtual void Initialize() { }
+
     public virtual BT_Node Get()
     {
         return this;

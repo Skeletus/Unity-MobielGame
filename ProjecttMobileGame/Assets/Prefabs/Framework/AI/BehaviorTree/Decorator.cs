@@ -22,6 +22,12 @@ public class Decorator : BT_Node
         child.SortPriority(ref priorityConter);
     }
 
+    public override void Initialize()
+    {
+        base.Initialize();
+        child.Initialize();
+    }
+
     public override BT_Node Get()
     {
         return child.Get();
