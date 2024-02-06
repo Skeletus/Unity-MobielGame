@@ -21,7 +21,7 @@ public class DamageVisualiser : MonoBehaviour
         healthComponent.onTakeDamage += TookDamage;
     }
 
-    private void TookDamage(float health, float delta, float maxHealth, GameObject Instigator)
+    protected virtual void TookDamage(float health, float delta, float maxHealth, GameObject Instigator)
     {
         Color currentEmmisionColor = mesh.material.GetColor(EmmisionColorPropertyName);
         if (Mathf.Abs((currentEmmisionColor - OrigionalEmissionColor).grayscale) < 0.1f)
