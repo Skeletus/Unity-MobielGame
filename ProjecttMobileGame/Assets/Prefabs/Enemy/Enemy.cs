@@ -84,7 +84,7 @@ public abstract class Enemy : MonoBehaviour, BehaviorTreeInterface, TeamInterfac
     {
         Vector3 positionDelta = transform.position - previousPosition;
         float speed = positionDelta.magnitude / Time.deltaTime;
-        Debug.Log($"current speed is {speed}");
+        //Debug.Log($"current speed is {speed}");
         Animator.SetFloat("Speed", speed);
         previousPosition = transform.position;
     }
