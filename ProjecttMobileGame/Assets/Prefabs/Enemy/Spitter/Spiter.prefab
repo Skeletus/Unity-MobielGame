@@ -170,7 +170,7 @@ MonoBehaviour:
   behaviorTree: {fileID: 5425341730964702244}
   movementComponent: {fileID: 4560245535433818468}
   TeamID: 2
-  projectilePrefab: {fileID: 3600361241490367549, guid: 65d74e81c68344f4ab0139cd61915053,
+  projectilePrefab: {fileID: 1053744490817978065, guid: 0f26c7e04d5aa954bb1d49d3dfcf4190,
     type: 3}
   launchPoint: {fileID: 7497991741592505664}
 --- !u!114 &4173270347698978969 stripped
