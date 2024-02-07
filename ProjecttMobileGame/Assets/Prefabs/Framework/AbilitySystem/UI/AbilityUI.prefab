@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3851909212454997984}
   - component: {fileID: 7318753023955569377}
+  - component: {fileID: 4561916114054601058}
   m_Layer: 5
   m_Name: AbilityUI
   m_TagString: Untagged
@@ -46,6 +47,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913574492345015536}
   m_CullTransparentMesh: 1
+--- !u!114 &4561916114054601058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913574492345015536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f393bd6b072909c4087d10fd0835206b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityIcon: {fileID: 4756488777764323237}
+  CooldownWheel: {fileID: 7867291587892321312}
 --- !u!1 &1306450140842893047
 GameObject:
   m_ObjectHideFlags: 0

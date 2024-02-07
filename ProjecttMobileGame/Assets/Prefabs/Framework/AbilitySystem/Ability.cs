@@ -21,6 +21,11 @@ public abstract class Ability : ScriptableObject
     public delegate void OnCooldownStarted();
     public OnCooldownStarted onCooldownStarted;
 
+    internal Sprite GetAbilityIcon()
+    {
+        return AbilityIcon;
+    }
+
     internal void InitAbility(AbilityComponent abilityComponent)
     {
         this.abilityComponent = abilityComponent;
