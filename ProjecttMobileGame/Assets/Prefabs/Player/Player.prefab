@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 8416289471791984062}
   - component: {fileID: 4928833271398038652}
   - component: {fileID: 1678950114}
+  - component: {fileID: 7262937674411091828}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -118,6 +119,8 @@ MonoBehaviour:
   moveStick: {fileID: 0}
   characterController: {fileID: 8354115768754900955}
   moveSpeed: 5
+  maxMoveSpeed: 80
+  minMoveSpeed: 5
   animTurnSpeed: 11
   movementComponent: {fileID: 8416289471791984062}
   TeamID: 1
@@ -239,6 +242,22 @@ MonoBehaviour:
   EmmisionColorPropertyName: _Addition
   healthComponent: {fileID: 4928833271398038652}
   shaker: {fileID: 0}
+--- !u!114 &7262937674411091828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704347248668494669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7028ba2560321d440a664247f803034f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialAbilities:
+  - {fileID: 11400000, guid: c98a1db6678d9454c82bc3e25d2a496c, type: 2}
+  stamina: 200
+  maxStamina: 200
 --- !u!1001 &7335048086132189454
 PrefabInstance:
   m_ObjectHideFlags: 0
