@@ -1,20 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, TeamInterface
+public class Projectile : MonoBehaviour
 {
     [SerializeField] float FlightHeight;
     [SerializeField] Rigidbody rigidBody;
+    [SerializeField] DamageComponent DamageComponent;
 
-    int TeamID = -1;
+    TeamInterface instigatorTeamInterface;
 
     public void Launch(GameObject instigator, Vector3 Destination)
     {
-        TeamInterface instigatorTeamInterface = instigator.GetComponent<TeamInterface>();
+        instigatorTeamInterface = instigator.GetComponent<TeamInterface>();
         if (instigatorTeamInterface != null)
         {
-            TeamID = instigatorTeamInterface.GetTeamID();
+            DamageComponent.SetTeamInterfaceSrc(instigatorTeamInterface);
         }
         float gravity = Physics.gravity.magnitude;
         float halfFlightTime = Mathf.Sqrt((FlightHeight * 2.0f) / gravity);
@@ -30,5 +32,16 @@ public class Projectile : MonoBehaviour, TeamInterface
         rigidBody.AddForce(flightVel, ForceMode.VelocityChange);
     }
 
-    public int GetTeamID() { return TeamID; }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (instigatorTeamInterface.GetRelationTowards(other.gameObject) != ETeamRelation.Friendly)
+        {
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        Destroy(gameObject);
+    }
 }

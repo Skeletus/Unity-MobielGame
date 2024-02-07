@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlightHeight: 4
   rigidBody: {fileID: 3067337713297266199}
+  DamageComponent: {fileID: 2882188510161024741}
 --- !u!54 &3067337713297266199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -210,6 +211,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3777584425729460108, guid: c1032f863600db04193eec7a2230a623,
+        type: 3}
+      propertyPath: startedEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8732114882921524879, guid: c1032f863600db04193eec7a2230a623,
         type: 3}
       propertyPath: m_Name
@@ -217,6 +223,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1032f863600db04193eec7a2230a623, type: 3}
+--- !u!114 &2882188510161024741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3777584425729460108, guid: c1032f863600db04193eec7a2230a623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1410535054982721897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c5d101d702c854da0d858d3ed8c359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3765187642459220842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2869804646376135171, guid: c1032f863600db04193eec7a2230a623,
