@@ -17,6 +17,11 @@ public class AbilityComponent : MonoBehaviour
     [SerializeField] float stamina = 200f;
     [SerializeField] float maxStamina = 200f;
 
+    public void BroadcastStaminaChangeImmedietely()
+    {
+        onStaminaChange?.Invoke(stamina, maxStamina);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +58,7 @@ public class AbilityComponent : MonoBehaviour
         if (stamina <= staminaToConsume) return false;
 
         stamina -= staminaToConsume;
-        onStaminaChange?.Invoke(stamina, maxStamina);
+        BroadcastStaminaChangeImmedietely();
         return true;
     }
 }
