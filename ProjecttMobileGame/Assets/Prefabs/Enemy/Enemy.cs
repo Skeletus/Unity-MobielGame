@@ -82,6 +82,8 @@ public abstract class Enemy : MonoBehaviour, BehaviorTreeInterface, TeamInterfac
 
     private void CalculateSpeed()
     {
+        if(movementComponent == null) return;
+
         Vector3 positionDelta = transform.position - previousPosition;
         float speed = positionDelta.magnitude / Time.deltaTime;
         //Debug.Log($"current speed is {speed}");

@@ -49,6 +49,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: c57f59479fa9e674f8bb42df19370b55,
         type: 2}
+    - target: {fileID: 2804194627462331052, guid: 529097dfbd0489646bf88eea352b44fa,
+        type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4479600716606302241, guid: 529097dfbd0489646bf88eea352b44fa,
         type: 3}
       propertyPath: m_RootOrder
