@@ -71,7 +71,7 @@ public abstract class BT_Node
     public virtual void SortPriority(ref int priorityConter)
     {
         priority = priorityConter++;
-        Debug.Log($"{this} has priorty {priority}");
+        //Debug.Log($"{this} has priorty {priority}");
     }
 
     public virtual void Initialize() { }

@@ -55,7 +55,7 @@ public abstract class SenseComponent : MonoBehaviour
                     else
                     {
                         onPerceptionUpdated?.Invoke(stimulus, true);
-                        Debug.Log($"Sensed {stimulus.gameObject}");
+                        //Debug.Log($"Sensed {stimulus.gameObject}");
                     }
                 }
             }
@@ -88,7 +88,7 @@ public abstract class SenseComponent : MonoBehaviour
         yield return new WaitForSeconds(forgettingTime);
         forgettingRoutines.Remove(stimulus);
         onPerceptionUpdated?.Invoke(stimulus, false);
-        Debug.Log($"Track off {stimulus.gameObject}");
+        //Debug.Log($"Track off {stimulus.gameObject}");
     }
 
     protected virtual void DrawDebug()

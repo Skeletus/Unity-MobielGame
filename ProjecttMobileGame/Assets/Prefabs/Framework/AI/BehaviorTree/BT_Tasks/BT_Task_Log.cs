@@ -11,7 +11,7 @@ public class BT_Task_Log : BT_Node
     }
     protected override NodeResult Execute()
     {
-        Debug.Log(message);
+        //Debug.Log(message);
         return NodeResult.Sucess;
     }
 }

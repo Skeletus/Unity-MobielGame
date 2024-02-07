@@ -18,6 +18,8 @@ MonoBehaviour:
   ScanerPrefab: {fileID: 5864262500593266620, guid: 9db59e0f32ecb544e843c748808782af,
     type: 3}
   fireRadius: 20
-  fireDuration: 0.5
-  scanVFX: {fileID: 2063146224638894574, guid: d5334a9026627f9489080ee7e74abfa8, type: 3}
+  fireDuration: 1
+  damageDuration: 3
+  fireDamage: 60
+  ScanVFX: {fileID: 2063146224638894574, guid: d5334a9026627f9489080ee7e74abfa8, type: 3}
   DamageVFX: {fileID: 100004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
