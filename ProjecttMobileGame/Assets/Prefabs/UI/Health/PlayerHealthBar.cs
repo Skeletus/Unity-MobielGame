@@ -13,5 +13,7 @@ public class PlayerHealthBar : MonoBehaviour
     {
         AmtImage.fillAmount = health / maxHealth;
         AmtText.SetText(health.ToString());
+        int healthAsInt = (int)health;
+        AmtText.SetText(healthAsInt.ToString());
     }
 }
