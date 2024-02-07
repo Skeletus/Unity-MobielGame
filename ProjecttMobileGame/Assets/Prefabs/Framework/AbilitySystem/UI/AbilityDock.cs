@@ -11,6 +11,13 @@ public class AbilityDock : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] VerticalLayoutGroup LayoutGrp;
     [SerializeField] AbilityUI AbilityUIPrefab;
 
+    [SerializeField] float ScaleRange = 200f;
+
+    [SerializeField] float highlightSize = 1.5f;
+    [SerializeField] float ScaleSpeed = 20f;
+
+    Vector3 GoalScale = Vector3.one;
+
     List<AbilityUI> abilityUIs = new List<AbilityUI>();
 
     PointerEventData touchData;
@@ -41,12 +48,37 @@ public class AbilityDock : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (touchData != null)
         {
             GetUIUnderPointer(touchData, out hightlightedAbility);
+            ArrangeScale(touchData);
+        }
+
+        transform.localScale = Vector3.Lerp(transform.localScale, GoalScale, Time.deltaTime * ScaleSpeed);
+    }
+
+    private void ArrangeScale(PointerEventData touchData)
+    {
+        if (ScaleRange == 0) return;
+
+        float touchVerticalPos = touchData.position.y;
+        foreach (AbilityUI abilityUI in abilityUIs)
+        {
+            float abilityUIVerticalPos = abilityUI.transform.position.y;
+            float distance = Mathf.Abs(touchVerticalPos - abilityUIVerticalPos);
+
+            if (distance > ScaleRange)
+            {
+                abilityUI.SetScaleAmt(0);
+                continue;
+            }
+
+            float scaleAmt = (ScaleRange - distance) / ScaleRange;
+            abilityUI.SetScaleAmt(scaleAmt);
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         touchData = eventData;
+        GoalScale = Vector3.one * highlightSize;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -56,6 +88,16 @@ public class AbilityDock : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             hightlightedAbility.ActivateAbility();
         }
         touchData = null;
+        ResetScale();
+        GoalScale = Vector3.one;
+    }
+
+    private void ResetScale()
+    {
+        foreach (AbilityUI abilityUI in abilityUIs)
+        {
+            abilityUI.SetScaleAmt(0);
+        }
     }
 
     bool GetUIUnderPointer(PointerEventData eventData, out AbilityUI abilityUI)
