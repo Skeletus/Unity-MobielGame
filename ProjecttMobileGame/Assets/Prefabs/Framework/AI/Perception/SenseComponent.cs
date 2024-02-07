@@ -70,6 +70,19 @@ public abstract class SenseComponent : MonoBehaviour
         }
     }
 
+    internal void AssignPerceivedStimuli(PerceptionStimulus targetStimuli)
+    {
+        perceptibleStimulusList.Add(targetStimuli);
+        onPerceptionUpdated?.Invoke(targetStimuli, true);
+
+        //TODO: WHAT IF WE ARE FORETTING IT.
+        if (forgettingRoutines.TryGetValue(targetStimuli, out Coroutine forgetCoroutine))
+        {
+            StopCoroutine(forgetCoroutine);
+            forgettingRoutines.Remove(targetStimuli);
+        }
+    }
+
     IEnumerator ForgetStimulus(PerceptionStimulus stimulus)
     {
         yield return new WaitForSeconds(forgettingTime);

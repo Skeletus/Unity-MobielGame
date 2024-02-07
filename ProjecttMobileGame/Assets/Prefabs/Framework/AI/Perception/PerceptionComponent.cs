@@ -13,12 +13,18 @@ public class PerceptionComponent : MonoBehaviour
     public event OnPerceptionTargetChanged onPerceptionTargetChanged;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         foreach(SenseComponent sense in sensesArray)
         {
             sense.onPerceptionUpdated += SenseUpdated;
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
     }
 
     private void SenseUpdated(PerceptionStimulus stimulus, bool successFullySensed)
@@ -57,6 +63,14 @@ public class PerceptionComponent : MonoBehaviour
                 onPerceptionTargetChanged?.Invoke(targetStimulus.gameObject, false);
                 targetStimulus = null;
             }
+        }
+    }
+
+    internal void AssignPercievedStimui(PerceptionStimulus targetStimuli)
+    {
+        if (sensesArray.Length != 0)
+        {
+            sensesArray[0].AssignPerceivedStimuli(targetStimuli);
         }
     }
 
