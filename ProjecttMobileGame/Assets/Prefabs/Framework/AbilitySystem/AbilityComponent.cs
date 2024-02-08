@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityComponent : MonoBehaviour
+public class AbilityComponent : MonoBehaviour, IPurchaseListener
 {
     [SerializeField] Ability[] InitialAbilities;
 
@@ -59,6 +59,16 @@ public class AbilityComponent : MonoBehaviour
 
         stamina -= staminaToConsume;
         BroadcastStaminaChangeImmedietely();
+        return true;
+    }
+
+    public bool HandlePurchase(Object newPurchase)
+    {
+        Ability itemAsAbility = newPurchase as Ability;
+        if (itemAsAbility == null) return false;
+
+        GiveAbility(itemAsAbility);
+
         return true;
     }
 }

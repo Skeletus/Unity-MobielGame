@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7039e2ca8a6544bb2d3bea7057e93d, type: 3}
+  m_Name: Fire_Shop_Item
+  m_EditorClassIdentifier: 
+  Title: Fire Ability
+  Price: 80
+  Item: {fileID: 11400000, guid: 5e8aecdeb1149594791c6d30a676cd32, type: 2}
+  ItemIcon: {fileID: 0}
+  Description: You're a piromaniac just like Pinado
