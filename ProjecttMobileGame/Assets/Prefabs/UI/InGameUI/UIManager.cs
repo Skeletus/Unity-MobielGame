@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     internal void SwithToGameplayUI()
     {
         SetCurrentActiveGrp(GameplayControl);
+        GameplayStatics.SetGamePaused(false);
     }
 
     private void SetCurrentActiveGrp(CanvasGroup canvasGroup)
@@ -68,6 +69,7 @@ public class UIManager : MonoBehaviour
     internal void SwithToShop()
     {
         SetCurrentActiveGrp(Shop);
+        GameplayStatics.SetGamePaused(true);
     }
 
     private void SetCanvasGroupEnabled(CanvasGroup canvasGroup, bool enabled)

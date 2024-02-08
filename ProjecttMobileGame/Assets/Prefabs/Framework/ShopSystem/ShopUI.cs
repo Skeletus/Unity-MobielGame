@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static ShopItemUI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -19,17 +20,37 @@ public class ShopUI : MonoBehaviour
 
     List<ShopItemUI> shopItems = new List<ShopItemUI>();
 
+    ShopItemUI selectedItem;
+
     private void Start()
     {
         InitShopItems();
         BackBtn.onClick.AddListener(uiManager.SwithToGameplayUI);
+        BuyBtn.onClick.AddListener(TryPuchaseItem);
         creditComp.onCreditChanged += UpdateCredit;
         UpdateCredit(creditComp.Credit);
+    }
+
+    private void TryPuchaseItem()
+    {
+        if (!selectedItem || !shopSystem.TryPurchase(selectedItem.GetItem(), creditComp))
+            return;
+
+        Destroy(selectedItem.gameObject);
     }
 
     private void UpdateCredit(int newCredit)
     {
         creditText.SetText(newCredit.ToString());
+        RefreshItems();
+    }
+
+    private void RefreshItems()
+    {
+        foreach (ShopItemUI shopItemUI in shopItems)
+        {
+            shopItemUI.Refresh(creditComp.Credit);
+        }
     }
 
     private void InitShopItems()
@@ -45,6 +66,12 @@ public class ShopUI : MonoBehaviour
     {
         ShopItemUI newItemUI = Instantiate(shopItemUIPrefab, shopList);
         newItemUI.Init(item, creditComp.Credit);
+        newItemUI.onItemSelected += ItemSelected;
         shopItems.Add(newItemUI);
+    }
+
+    private void ItemSelected(ShopItemUI Item)
+    {
+        selectedItem = Item;
     }
 }
