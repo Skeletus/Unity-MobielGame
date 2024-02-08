@@ -171,4 +171,9 @@ public class Player : MonoBehaviour, TeamInterface
         animatorTurnSpeed = Mathf.Lerp(animatorTurnSpeed, currentTurnSpeed, Time.deltaTime * animTurnSpeed);
         animator.SetFloat("TurningSpeed", animatorTurnSpeed);
     }
+
+    public void DeathFinished()
+    {
+        uiManager.SwithToDeathMenu();
+    }
 }
