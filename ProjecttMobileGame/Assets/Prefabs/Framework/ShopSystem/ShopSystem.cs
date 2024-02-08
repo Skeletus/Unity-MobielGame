@@ -12,8 +12,8 @@ public class ShopSystem : ScriptableObject
         return shopItems;
     }
 
-    public bool TryPurchase(ShopItem selectedItem)
+    public bool TryPurchase(ShopItem selectedItem, CreditComponent purchaser)
     {
-        return false;
+        return purchaser.Purchase(selectedItem.Price, selectedItem.Item);
     }
 }

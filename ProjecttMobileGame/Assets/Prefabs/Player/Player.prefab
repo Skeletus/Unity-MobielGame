@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 4928833271398038652}
   - component: {fileID: 1678950114}
   - component: {fileID: 7262937674411091828}
+  - component: {fileID: 3388285677541255231}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -127,6 +128,8 @@ MonoBehaviour:
   inventoryComponent: {fileID: 2863672362084190235}
   healthComponent: {fileID: 4928833271398038652}
   healthBar: {fileID: 0}
+  abilityComponent: {fileID: 0}
+  staminaBar: {fileID: 0}
   uiManager: {fileID: 0}
 --- !u!143 &8354115768754900955
 CharacterController:
@@ -258,6 +261,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c98a1db6678d9454c82bc3e25d2a496c, type: 2}
   stamina: 200
   maxStamina: 200
+--- !u!114 &3388285677541255231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704347248668494669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f839ab3ac6d65e438154df8752df3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  credits: 100
+  PurchaseListeners:
+  - {fileID: 2863672362084190235}
 --- !u!1001 &7335048086132189454
 PrefabInstance:
   m_ObjectHideFlags: 0
