@@ -8,7 +8,7 @@ public interface IPurchaseListener
     public bool HandlePurchase(Object newPurchase);
 }
 
-public class CreditComponent : MonoBehaviour
+public class CreditComponent : MonoBehaviour, IRewardListener
 {
     [SerializeField] int credits;
     [SerializeField] Component[] PurchaseListeners;
@@ -60,5 +60,11 @@ public class CreditComponent : MonoBehaviour
         BroadcastPurchase(item);
 
         return true;
+    }
+
+    public void Reward(Reward reward)
+    {
+        credits += reward.creditReward;
+        onCreditChanged?.Invoke(credits);
     }
 }

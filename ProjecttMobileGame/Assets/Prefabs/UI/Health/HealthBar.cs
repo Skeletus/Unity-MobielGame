@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
         healthSlider.value = health / maxHealth;
     }
 
-    internal void OnOwnerDead()
+    internal void OnOwnerDead(GameObject Killer)
     {
         Destroy(gameObject);
     }

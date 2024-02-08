@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour
+public class HealthComponent : MonoBehaviour, IRewardListener
 {
     public delegate void OnHealthChange(float health, float delta, float maxHealth);
     public delegate void OnTakeDamage(float health, float delta, float maxHealth, GameObject Instigator);
-    public delegate void OnHealthEmpty();
+    public delegate void OnHealthEmpty(GameObject Killer);
 
     [SerializeField] float health = 100;
     [SerializeField] float maxHealth = 100;
@@ -35,14 +35,20 @@ public class HealthComponent : MonoBehaviour
         if(health <= 0)
         {
             health = 0;
-            onHealthEmpty?.Invoke();
+            onHealthEmpty?.Invoke(instigator);
         }
 
-        Debug.Log($"{gameObject.name}, taking damage {amount}, health is now: {health}");
+        //Debug.Log($"{gameObject.name}, taking damage {amount}, health is now: {health}");
     }
 
     public void BroadcastHealthValueImmeidately()
     {
         onHealthChange?.Invoke(health, 0, maxHealth);
+    }
+
+    public void Reward(Reward reward)
+    {
+        health = Mathf.Clamp(health + reward.healthReward, 0, maxHealth);
+        onHealthChange?.Invoke(health, reward.healthReward, maxHealth);
     }
 }
