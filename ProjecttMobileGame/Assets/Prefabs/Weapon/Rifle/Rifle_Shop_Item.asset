@@ -15,5 +15,5 @@ MonoBehaviour:
   Title: Rifle
   Price: 80
   Item: {fileID: 5427437167977024917, guid: 6e5a5dc1b7aa693408c1e7b5734da737, type: 3}
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: fd85dc30fe65b494d899b92ae2403d75, type: 3}
   Description: Powerful AK-47. High fire rate and damage
