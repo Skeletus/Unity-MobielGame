@@ -76,7 +76,18 @@ public class InventoryComponent : MonoBehaviour, IPurchaseListener
         Weapon itemAsWeapon = itemAsGameObject.GetComponent<Weapon>();
         if (itemAsWeapon == null) return false;
 
+        bool hasWeapon = true;
+        if (weapons.Count == 0)
+        {
+            hasWeapon = false;
+        }
+
         GiveNewWeapon(itemAsWeapon);
+
+        if (!hasWeapon)
+        {
+            EquipWeapon(0);
+        }
         return true;
     }
 

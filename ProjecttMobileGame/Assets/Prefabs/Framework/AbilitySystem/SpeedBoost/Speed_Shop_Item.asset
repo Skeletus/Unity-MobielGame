@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7039e2ca8a6544bb2d3bea7057e93d, type: 3}
+  m_Name: Speed_Shop_Item
+  m_EditorClassIdentifier: 
+  Title: Speed Boost
+  Price: 40
+  Item: {fileID: 11400000, guid: c98a1db6678d9454c82bc3e25d2a496c, type: 2}
+  ItemIcon: {fileID: 21300000, guid: af26bc25b0ba66b43a46dca20df0f778, type: 3}
+  Description: You're going to run faster than Neon
