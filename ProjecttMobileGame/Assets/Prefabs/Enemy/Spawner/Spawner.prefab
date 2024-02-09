@@ -153,6 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 155
   maxHealth: 155
+  HitAudio: {fileID: 8300000, guid: c1c63d14bc9d9497b8f9b39c4ea3b1c7, type: 3}
+  DeathAudio: {fileID: 8300000, guid: dc8d32edc7fb1434ba9031b0fbf8a762, type: 3}
+  volume: 1
 --- !u!95 &-4394258270009189991
 Animator:
   serializedVersion: 4

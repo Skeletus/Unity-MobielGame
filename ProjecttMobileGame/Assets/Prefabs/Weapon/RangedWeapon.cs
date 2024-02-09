@@ -10,11 +10,12 @@ public class RangedWeapon : Weapon
     public override void Attack()
     {
         GameObject target = aimComponent.GetAimTarget(out Vector3 aimDirection);
-        Debug.Log($"aiming at {target}");
+        //Debug.Log($"aiming at {target}");
         DamageGameObject(target, damage);
 
         bulletVFX.transform.rotation = Quaternion.LookRotation(aimDirection);
         bulletVFX.Emit(bulletVFX.emission.GetBurst(0).maxCount);
+        PlayWeaponAudio();
     }
 
     // Start is called before the first frame update
