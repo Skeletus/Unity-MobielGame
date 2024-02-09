@@ -15,5 +15,7 @@ MonoBehaviour:
   AbilityIcon: {fileID: 21300000, guid: af26bc25b0ba66b43a46dca20df0f778, type: 3}
   staminaCost: 35
   cooldownDuration: 2
+  AbilityAudio: {fileID: 8300000, guid: 59f5530026c68f44591970d2d9a32014, type: 3}
+  volume: 1
   boostAmt: 8
   boostDuration: 2

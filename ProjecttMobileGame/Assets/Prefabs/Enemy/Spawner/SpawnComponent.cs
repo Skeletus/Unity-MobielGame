@@ -6,6 +6,12 @@ public class SpawnComponent : MonoBehaviour
 {
     [SerializeField] GameObject[] objectsToSpawn;
     [SerializeField] Transform spawnTransform;
+
+    [Header("Audio")]
+
+    [SerializeField] AudioClip SpawnAudio;
+    [SerializeField] float volume = 1f;
+
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,9 @@ public class SpawnComponent : MonoBehaviour
         {
             SpawnImpl();
         }
+
+        Vector3 SpawnAudioLoc = transform.position;
+        GameplayStatics.PlayAudioAtLoc(SpawnAudio, SpawnAudioLoc, volume);
 
         return true;
 

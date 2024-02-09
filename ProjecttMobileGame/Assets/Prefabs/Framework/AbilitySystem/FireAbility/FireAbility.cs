@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ability/Fire")]
 public class FireAbility : Ability
 {
+    [Header("Fire")]
     [SerializeField] Scaner ScanerPrefab;
     [SerializeField] float fireRadius;
     [SerializeField] float fireDuration;
