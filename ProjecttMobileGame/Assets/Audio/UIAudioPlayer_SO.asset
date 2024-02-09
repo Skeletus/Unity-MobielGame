@@ -15,3 +15,4 @@ MonoBehaviour:
   ClickAudioClip: {fileID: 8300000, guid: 0fcd692c64aaf4ac7aecc76ee212893c, type: 3}
   CommitAudioClip: {fileID: 8300000, guid: 45a5ea1fed2ac4325ba2f0415cde6b34, type: 3}
   SelectAudioClip: {fileID: 8300000, guid: dd4831d7f16404eef93a553329551c28, type: 3}
+  WinAudioClip: {fileID: 8300000, guid: 58b62675ecfc446499cf6014b0f1e0f2, type: 3}

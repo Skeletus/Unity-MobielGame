@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static LevelManager;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] CanvasGroup PauseMenu;
     [SerializeField] CanvasGroup Shop;
     [SerializeField] CanvasGroup DeathMenu;
+    [SerializeField] CanvasGroup WinMenu;
+    [SerializeField] UIAudioPlayer uiAudioPlayer;
 
     List<CanvasGroup> AllChildren = new List<CanvasGroup>();
 
@@ -31,6 +34,15 @@ public class UIManager : MonoBehaviour
         {
             SetCurrentActiveGrp(AllChildren[0]);
         }
+
+        LevelManager.onLevelFinished += LevelFinished;
+    }
+
+    private void LevelFinished()
+    {
+        SetCurrentActiveGrp(WinMenu);
+        GameplayStatics.SetGamePaused(true);
+        uiAudioPlayer.PlayWin();
     }
 
     internal void SwithToGameplayUI()
