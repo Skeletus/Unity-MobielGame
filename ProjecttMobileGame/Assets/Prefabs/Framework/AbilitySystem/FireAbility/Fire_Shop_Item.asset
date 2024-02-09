@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire_Shop_Item
   m_EditorClassIdentifier: 
   Title: Fire Ability
-  Price: 120
+  Price: 100
   Item: {fileID: 11400000, guid: 5e8aecdeb1149594791c6d30a676cd32, type: 2}
   ItemIcon: {fileID: 21300000, guid: 5caced09528b1e34186100b6b798f6d5, type: 3}
   Description: You're a piromaniac just like Pinado

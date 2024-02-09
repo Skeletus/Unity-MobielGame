@@ -156,6 +156,16 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3558819429447765864, guid: 529097dfbd0489646bf88eea352b44fa,
+        type: 3}
+      propertyPath: health
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558819429447765864, guid: 529097dfbd0489646bf88eea352b44fa,
+        type: 3}
+      propertyPath: maxHealth
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4479600716606302241, guid: 529097dfbd0489646bf88eea352b44fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -285,8 +295,8 @@ MonoBehaviour:
   TeamID: 2
   killReward:
     healthReward: 0
-    creditReward: 20
-    staminaReward: 10
+    creditReward: 25
+    staminaReward: 30
   damageComponent: {fileID: 8778599868037924456}
 --- !u!114 &5357139752956673000
 MonoBehaviour:

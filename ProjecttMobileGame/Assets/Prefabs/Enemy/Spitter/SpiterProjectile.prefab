@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2882188510161024741, guid: 65d74e81c68344f4ab0139cd61915053,
+        type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3199505598824527833, guid: 65d74e81c68344f4ab0139cd61915053,
         type: 3}
       propertyPath: m_Name
@@ -161,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 3405899300174267242, guid: af6c1e3f046eecd4d81330aeb285600f,
         type: 3}
       propertyPath: m_Intensity
-      value: 5.24392
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}

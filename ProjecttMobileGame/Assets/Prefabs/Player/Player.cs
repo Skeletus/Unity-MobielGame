@@ -85,12 +85,18 @@ public class Player : MonoBehaviour, TeamInterface
 
     public void AttackPoint()
     {
-        inventoryComponent.GetActiveWeapon().Attack();
+        if (inventoryComponent.HasWeapon())
+        {
+            inventoryComponent.GetActiveWeapon().Attack();
+        }
     }
 
     void StartSwitchWeapon()
     {
-        animator.SetTrigger("SwitchWeapon");
+        if (inventoryComponent.HasWeapon())
+        {
+            animator.SetTrigger("SwitchWeapon");
+        }
     }
 
     public void SwitchWeapon()
@@ -101,13 +107,16 @@ public class Player : MonoBehaviour, TeamInterface
     void AimInputUpdated(Vector2 inputValue)
     {
         aimInput = inputValue;
-        if(aimInput.magnitude > 0 )
+        if(inventoryComponent.HasWeapon())
         {
-            animator.SetBool("Attacking", true);
-        }
-        else
-        {
-            animator.SetBool("Attacking", false);
+            if (aimInput.magnitude > 0)
+            {
+                animator.SetBool("Attacking", true);
+            }
+            else
+            {
+                animator.SetBool("Attacking", false);
+            }
         }
     }
 

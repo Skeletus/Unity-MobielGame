@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HealthRegen_Shop_Item
   m_EditorClassIdentifier: 
   Title: Health Regen
-  Price: 80
+  Price: 55
   Item: {fileID: 11400000, guid: 243833f460c1d644c868ce81fad32d4a, type: 2}
   ItemIcon: {fileID: 21300000, guid: 6c8d518c6aea2f54cb02a60e6e0551be, type: 3}
   Description: Medical cure, better than Sage cure

@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5aedb0eac92b540b1b70580507b3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 155
+  maxHealth: 155
 --- !u!95 &-4394258270009189991
 Animator:
   serializedVersion: 4
@@ -286,9 +286,9 @@ MonoBehaviour:
   movementComponent: {fileID: 0}
   TeamID: 2
   killReward:
-    healthReward: 25
-    creditReward: 30
-    staminaReward: 20
+    healthReward: 50
+    creditReward: 85
+    staminaReward: 55
   DeathVFX:
   - particleSystem: {fileID: 5515065002404772068, guid: b5c8ca7ed10b61e499cce8ec3b6e2e4c,
       type: 3}

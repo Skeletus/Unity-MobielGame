@@ -93,6 +93,15 @@ public class InventoryComponent : MonoBehaviour, IPurchaseListener
 
     internal Weapon GetActiveWeapon()
     {
-        return weapons[currentWeaponIndex];
+        if (HasWeapon())
+        {
+            return weapons[currentWeaponIndex];
+        }
+        return null;
+    }
+
+    public bool HasWeapon()
+    {
+        return weapons.Count != 0;
     }
 }
