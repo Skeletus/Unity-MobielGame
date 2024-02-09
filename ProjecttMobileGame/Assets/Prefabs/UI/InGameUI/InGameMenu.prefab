@@ -95,7 +95,7 @@ MonoBehaviour:
   RestartBtn: {fileID: 1070310919189912576}
   MainMenu: {fileID: 426404448733233865}
   uiManager: {fileID: 0}
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 11400000, guid: 7211f0330f97bc946ae15facce87111c, type: 2}
 --- !u!1 &2418249664060390862
 GameObject:
   m_ObjectHideFlags: 0
