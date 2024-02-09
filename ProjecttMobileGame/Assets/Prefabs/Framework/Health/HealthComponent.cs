@@ -20,6 +20,12 @@ public class HealthComponent : MonoBehaviour, IRewardListener
     [SerializeField] AudioClip HitAudio;
     [SerializeField] AudioClip DeathAudio;
     [SerializeField] float volume;
+    AudioSource audioSrc;
+
+    private void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
 
     public void ChangeHealth(float amount, GameObject instigator)
     {
@@ -34,7 +40,10 @@ public class HealthComponent : MonoBehaviour, IRewardListener
         {
             onTakeDamage?.Invoke(health, amount, maxHealth, instigator);
             Vector3 loc = transform.position;
-            GameplayStatics.PlayAudioAtLoc(HitAudio, loc, 1);
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.PlayOneShot(HitAudio, volume);
+            }
         }
 
         onHealthChange?.Invoke(health, amount, maxHealth);
