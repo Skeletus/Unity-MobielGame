@@ -16,6 +16,11 @@ public class HealthComponent : MonoBehaviour, IRewardListener
     public event OnTakeDamage onTakeDamage;
     public event OnHealthEmpty onHealthEmpty;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip HitAudio;
+    [SerializeField] AudioClip DeathAudio;
+    [SerializeField] float volume;
+
     public void ChangeHealth(float amount, GameObject instigator)
     {
         if (amount == 0 || health == 0)
@@ -28,6 +33,8 @@ public class HealthComponent : MonoBehaviour, IRewardListener
         if(amount < 0)
         {
             onTakeDamage?.Invoke(health, amount, maxHealth, instigator);
+            Vector3 loc = transform.position;
+            GameplayStatics.PlayAudioAtLoc(HitAudio, loc, 1);
         }
 
         onHealthChange?.Invoke(health, amount, maxHealth);
@@ -36,6 +43,8 @@ public class HealthComponent : MonoBehaviour, IRewardListener
         {
             health = 0;
             onHealthEmpty?.Invoke(instigator);
+            Vector3 loc = transform.position;
+            GameplayStatics.PlayAudioAtLoc(DeathAudio, loc, 1);
         }
 
         //Debug.Log($"{gameObject.name}, taking damage {amount}, health is now: {health}");
