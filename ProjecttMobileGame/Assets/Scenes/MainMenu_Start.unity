@@ -16408,6 +16408,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 155445400105618139, guid: 2d45b755ed2521744a99d350b8e0dc0d,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 225265010528395148, guid: 2d45b755ed2521744a99d350b8e0dc0d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -16532,6 +16537,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 486488072630082532, guid: 2d45b755ed2521744a99d350b8e0dc0d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 486488072630082532, guid: 2d45b755ed2521744a99d350b8e0dc0d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275669171996328847, guid: 2d45b755ed2521744a99d350b8e0dc0d,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275669171996328847, guid: 2d45b755ed2521744a99d350b8e0dc0d,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2160
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275669171996328847, guid: 2d45b755ed2521744a99d350b8e0dc0d,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2825866487255210934, guid: 2d45b755ed2521744a99d350b8e0dc0d,
         type: 3}
