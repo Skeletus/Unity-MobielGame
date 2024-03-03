@@ -152,7 +152,7 @@ public class Player : MonoBehaviour, TeamInterface
         float right = Vector3.Dot(moveDirection, transform.right);
 
         animator.SetFloat("ForwardSpeed", forward);
-        animator.SetFloat("RightSpeed", forward);
+        animator.SetFloat("RightSpeed", right);
         characterController.Move(Vector3.down * Time.deltaTime * 10f);
     }
 
